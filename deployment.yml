@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-app-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+        - name: your-app-container
+          image: santosh-nellagi/wesite:latest
+          ports:
+            - containerPort: 3010 
